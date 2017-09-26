@@ -1,0 +1,15 @@
+Pin mapping for rf95 server and client
+LORA unit: Arduino
+01: 13,
+02: "BB",
+03: 11,
+05: 06,
+07: 10,
+08: 12
+10: 08,
+12: 02,
+13: 03,
+17: 07,
+22: "BB",
+32: "GND"
+34: "BB",
