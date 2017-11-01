@@ -1,7 +1,7 @@
 Pin mapping for rf95 server and client
 LORA unit: Arduino
 01: 13,
-02: "BB",
+02: "3.3V",
 03: 11,
 05: 06,
 07: 10,
@@ -10,6 +10,6 @@ LORA unit: Arduino
 12: 02,
 13: 03,
 17: 07,
-22: "BB",
+22: "3.3V",
 32: "GND"
-34: "BB",
+34: "3.3V",

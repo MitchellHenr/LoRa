@@ -1,0 +1,39 @@
+The following were used in developing this system:
+\begin{itemize}
+\item SX1276RF1KAS $\times$ 1
+  \begin{itemize}
+  \item This is the LoRa unit which transmits the data from the Arduino to the gateway
+  \end{itemize}
+\item 915MHz Antenna (yellow) $\times$ 1
+  \begin{itemize}
+  \item This is the antenna which came with the LoRa units, and is plugged into the ``HF'' port on the LoRa unit
+  \end{itemize}
+\item Arduino Uno board $\times$ 1
+  \begin{itemize}
+  \item This is the micro-controller which determines which data to collect and send
+  \end{itemize}
+\item USB 2.0 Type B cable $\times$ 1
+  \begin{itemize}
+  \item This is to connect the Arduino unit to a computer, in order to upload instructions to them
+  \end{itemize}
+\item Jumper Wires
+  \begin{itemize}
+  \item These are to connect the Arduino and LoRa unit
+  \end{itemize}
+\item Multi-Tech Systems MultiConnect\textregistered\ Conduit\texttrademark\ (MTCDT-LAT1-247A)
+  \begin{itemize}
+  \item This is the gateway to connect the LoRa network to the cloud
+  \end{itemize}
+\item Required Arduino libraries
+  \begin{itemize}
+  \item These are the \href{https://www.arduino.cc/en/Reference/SPI}{SPI library} and \href{https://github.com/matthijskooijman/arduino-lmic}{LMIC}.
+  \end{itemize}
+
+\end{itemize}
+
+We are using the same pin mapping as in the previous section, shown in \cref{tab:pinmap}.
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../writeup"
+%%% End:

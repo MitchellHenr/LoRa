@@ -1,4 +1,6 @@
+model: MTCDT-LAT1-247A-US
+
 username: admin
-password: daigt3am
+password: diagt3am
 
 IP address: 192.168.2.1

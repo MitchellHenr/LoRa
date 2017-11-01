@@ -1,0 +1,10 @@
+Before establishing communication between the two units, sensors must be connected.
+As things currently stand, the client code is set up for two sensors.  One of these is to be connected to pin A0, and the other is to be connected to A1.
+In future versions of the software, the number of sensors will not be hard-coded, but will simply allow for a plug-and-play style of use.
+Additionally, any functions that will be used to process the raw data from the sensors must be edited (they are currently called \lstinline[language=C++]{fix_temp} and \lstinline[language=C++]{fix_sound}, and are in \url{arduino/client/client.ino}\footnote{All file paths are relative to the main git repository.}).
+Sensors will also need to be connected to the Arduino's \SI{3.3}{\volt} and ground pins.
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../writeup"
+%%% End:

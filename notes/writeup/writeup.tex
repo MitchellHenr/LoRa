@@ -19,94 +19,59 @@
 \date{}
 
 \lstset{backgroundcolor = \color{lightgray},
-	basicstyle = \ttfamily \small,
-	breaklines = true,
-	breakatwhitespace = true,
-	commentstyle = \ttfamily \color{white},
-	frame = none,
-	numbers = left,
-	showstringspaces = false,
-upquote = false}
+  basicstyle = \ttfamily \small,
+  breaklines = true,
+  breakatwhitespace = true,
+  commentstyle = \ttfamily \color{white},
+  frame = none,
+  numbers = left,
+  showstringspaces = false,
+  upquote = false}
 
 \begin{document}
 \maketitle
-\section{Introduction}
+\section{Initial Testing}
+\subsection{Introduction}
 \label{sec:intro}
-The purpose of this experiment was to examine the direct wireless communication between two devices with SX1276RF1KAS Transceivers and Arduino Uno boards.
-As it stands, no gateway has been set up (though that is in the works), so source code that allows direct communication between two nodes was used.
-This experiment implemented an approach using SX1276RF1KAS Transceivers and Arduino Uno boards.
-Communication was established between the two units before sensors were attached to the client unit, and the data from those sensors were sent to the server unit.
+\input{initial_testing/intro}
 
-\section{Materials}
+\subsection{Materials}
 \label{sec:materials}
-The following were used in developing this system:
-\begin{itemize}
-\item SX1276RF1KAS $\times$ 2
-  \begin{itemize}
-  \item These are the LoRa units which transmit and receive the data from one Arduino to another
-  \end{itemize}
-\item 915MHz Antenna (yellow) $\times$ 2
-  \begin{itemize}
-  \item These are the antennae which came with the LoRa units, and are plugged into the ``HF'' port on the LoRa units
-  \end{itemize}
-\item Arduino Uno board $\times$ 2
-  \begin{itemize}
-  \item These are the micro-controllers which determine which data to collect and send
-  \end{itemize}
-\item USB 2.0 Type B cable $\times$ 2
-  \begin{itemize}
-  \item These are to connect the Arduino units to a computer, in order to upload instructions to them
-  \end{itemize}
-\item Jumper Wires
-  \begin{itemize}
-  \item These are to connect the Arduino and LoRa units, as well as the Arduino units and sensors
-  \end{itemize}
-  
-\item Required Arduino libraries
-  \begin{itemize}
-  \item These are the \href{https://www.arduino.cc/en/Reference/SPI}{SPI library} and \href{https://github.com/PaulStoffregen/RadioHead}{RadioHead library}.
-  \end{itemize}
+\input{initial_testing/materials}
 
-\end{itemize}
-
-The pin connections used in the setup of this system are shown in \cref{tab:pinmap}.
-\begin{table}[ht]
-  \centering
-  \begin{tabular}{c | c | c}
-    Purpose      & LoRa & Arduino \\ \hline
-    Power supply & 2 (VDD\_RF)   & \SI{3.3}{\volt} \\
-                 & 22 (VDD\_ANA) & \\
-                 & 34 (VDD\_FEM) & \\ \hline
-    Ground & 32 (GND) & GND \\ \hline
-    SPI & 1 (SCK) & D13 \\
-                 & 3 (MOSI) & D11 \\
-                 & 8 (MISO) & D12 \\
-                 & 7 (NSS) & 10 \\ \hline
-    Digital I/O & 12 (DIO0) & 2 \\
-                 & 5 (DIO1) & 6 \\
-                 & 17 (DIO2) & 7 \\ \hline
-    Reset & 10 (NRESET) & 8 \\ \hline
-    RXTX & 13 (RXTX) & 3
-  \end{tabular}
-  \caption{Pin mapping for the experiment.}
-  \label{tab:pinmap}
-\end{table}
-
-\section{Connecting Sensors}
+\subsection{Connecting Sensors}
 \label{sec:setup}
-Before establishing communication between the two units, sensors must be connected.
-As things currently stand, the client code is set up for two sensors.  One of these is to be connected to pin A0, and the other is to be connected to A1.
-In future versions of the software, the number of sensors will not be hard-coded, but will simply allow for a plug-and-play style of use.
-Additionally, any functions that will be used to process the raw data from the sensors must be edited (they are currently called \lstinline[language=C++]{fix_temp} and \lstinline[language=C++]{fix_sound}, and are in \url{arduino/client/client.ino}\footnote{All file paths are relative to the main git repository.}).
-Sensors will also need to be connected to the Arduino's \SI{3.3}{\volt} and ground pins.
+\input{initial_testing/connecting_sensors}
 
-\section{Procedure}
+\subsection{Procedure}
 \label{sec:procedure}
-After all components have been connected as described, All that remains is to upload the source code.
-The unit with the sensors attached is the client unit, and will therefore have the client code (\url{arduino/client/client.ino}) uploaded to it.
-The other unit is the server unit, and will therefore have the server code (\url{arduino/server/server.ino}) uploaded to it.
-This is the unit for which it is useful to have the serial monitor open, in order to verify that it is receiving data from the client unit.
-In future iterations of the system, this is the unit which will upload to the database via the gateway.
+\input{initial_testing/procedure}
+
+\section{Gateway Communication}
+\label{sec:gateway}
+\subsection{Introduction}
+\label{sec:gateway:intro}
+\input{gateway/intro}
+
+\subsection{Materials}
+\label{sec:gateway:materials}
+\input{gateway/materials}
+
+\subsection{Caveats}
+\label{sec:gateway:caveats}
+\input{gateway/caveats}
+
+\subsection{Procedure}
+\label{sec:gateway:procedure}
+\input{gateway/procedure}
+
+\subsection{Results}
+\label{sec:gateway:results}
+\input{gateway/results}
+
+\subsection{Discussion}
+\label{sec:gateway:discussion}
+\input{gateway/discussion}
 
 \end{document}
 
@@ -114,4 +79,3 @@ In future iterations of the system, this is the unit which will upload to the da
 %%% mode: latex
 %%% TeX-master: t
 %%% End:
-
